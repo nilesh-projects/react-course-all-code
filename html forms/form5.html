@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership Application- Form 5</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      input {
+        font-size: 20px;
+        padding: 2px 5px;
+      }
+      input:focus {
+        outline: none;
+      }
+      button {
+        width: -moz-fit-content;
+        width: fit-content;
+      }
+      button:focus {
+        outline: none;
+      }
+      .head > h1 {
+        font-size: 30px;
+      }
+      .head > p {
+        font-size: 20px;
+        color: rgb(45, 44, 44);
+      }
+      .flex {
+        display: flex;
+        gap: 5px;
+      }
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+      .flex-col label {
+        font-size: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <h1>Membership Application</h1>
+      <p>To apply for membership ,please complete all questions.</p>
+    </div>
+    <hr />
+
+    <form action="">
+      <table>
+        <!-- name -->
+        <tr>
+          <th><label for="name">Name</label></th>
+          <td>
+            <div class="flex">
+              <div class="flex-col">
+                <input type="text" name="firstname" id="firstname" />
+                <label for="firstname">First name</label>
+              </div>
+              <div class="flex-col">
+                <input type="text" name="lastname" id="lastname" />
+                <label for="lastname">Last name</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!-- address section -->
+        <tr>
+          <th rowspan="4"><label for="address">Address</label></th>
+          <td>
+            <div class="flex-col">
+              <input type="text" name="street-add" id="street-add" />
+              <label for="street-add">Street Address</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex-col">
+              <input type="text" name="street-add2" id="street-add2" />
+              <label for="street-add2">Street Address Line 2</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex-col">
+              <input type="text" name="city" id="city" />
+              <label for="city">City</label>
+            </div>
+            <div class="flex-col">
+              <input type="text" name="state" id="state" />
+              <label for="state">State/Province</label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="flex">
+              <div class="flex-col">
+                <input type="text" name="zip" id="zip" />
+                <label for="zip">Postal/Zip Code</label>
+              </div>
+              <div class="flex-col">
+                <button type="button">
+                  <select name="country" id="country">
+                    <option value="india">India</option>
+                    <option value="australia">australia</option>
+                    <option value="usa">USA</option>
+                    <option value="france">France</option>
+                    <option value="Korea">Korea</option>
+                  </select>
+                </button>
+                <label for="country">Country</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!--email  -->
+        <tr>
+          <th><label for="email">Email</label></th>
+          <td>
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="ex:myname@example.com"
+            />
+          </td>
+        </tr>
+        <!-- home number -->
+        <tr>
+          <th><label for="home-no">Home Number</label></th>
+          <td>
+            <div class="flex">
+              <div class="flex-col">
+                <input type="text" name="area-code1" id="area-code1" />
+                <label for="area-code1">Area Code</label>
+              </div>
+              <span>-</span>
+              <div class="flex-col">
+                <input type="text" name="home-no" id="home-no" />
+                <label for="home-no">Phone Number</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!-- cellular number -->
+        <tr>
+          <th><label for="cellular-no">Cellular Number</label></th>
+          <td>
+            <div class="flex">
+              <div class="flex-col">
+                <input type="text" name="area-code2" id="area-code2" />
+                <label for="area-code2">Area Code</label>
+              </div>
+              <span>-</span>
+              <div class="flex-col">
+                <input type="text" name="cellular-no" id="cellular-no" />
+                <label for="cellular-no">Phone Number</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!-- work number -->
+        <tr>
+          <th><label for="work-no">Work Number</label></th>
+          <td>
+            <div class="flex">
+              <div class="flex-col">
+                <input type="text" name="area-code3" id="area-code3" />
+                <label for="area-code3">Area Code</label>
+              </div>
+              <span>-</span>
+              <div class="flex-col">
+                <input type="text" name="work-no" id="work-no" />
+                <label for="work-no">Phone Number</label>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!-- website -->
+        <tr>
+          <th><label for="website">Website</label></th>
+
+          <td>
+            <div class="flex-col">
+              <input type="text" name="website" id="website" />
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

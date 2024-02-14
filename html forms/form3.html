@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form 3</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-size: 16;
+        }
+        input,select{
+            box-shadow: 0.5px 0.5px 1.5px  black inset;
+        }
+        input,select:focus{
+            outline: none;
+            padding: 2px 10px;
+        }
+        fieldset{
+            width: -moz-fit-content;
+            width: fit-content;
+            margin-left: 5px;
+        }
+        table{
+            margin-left: 5px;
+
+        }
+    </style>
+</head>
+<body>
+
+    <form action="">
+        <fieldset>
+            <table>
+            <legend>Customer</legend>
+            <tr>
+                <td><label for="name">Name<span>*</span></label></td>
+                <td><input type="text" name="name" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email<span>*</span></label></td>
+                <td><input type="email" name="email" id="email"></td>
+                
+            </tr>
+            <tr>
+                <td><label for="investment">Investment</label></td>
+                <td>
+                    <select name="investment" id="investment">
+                        <option value=""></option>
+                        <option value="20000">20000</option>
+                        <option value="40000">40000</option>
+                        <option value="60000">60000</option>
+                        <option value="80000">80000</option>
+                    </select>
+                </td>
+                
+            </tr>
+            <tr>
+                <td><label for="date-joined">Date Joined<span>*</span></label></td>
+                <td><input type="date" name="date-joined" id="date-joined"></td>
+
+
+            </tr>
+            <tr>
+                <td><label for="active">Active</label></td>
+                <td><input type="checkbox" name="active" id="active"></td>
+            </tr>
+            </table>
+        </fieldset>
+        <table>
+        <tr>
+            <td>
+                <button type="submit">OK</button>
+                <button type="button">Cancel</button>
+            </td>
+        </tr>
+    </table>
+    </form>
+    
+</body>
+</html>

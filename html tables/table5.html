@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table 5</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        table{
+            margin: 5px ;
+        }
+        table,tr,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            font-size: 20px;
+        }
+        .width-5{
+            width: 4rem;
+        }
+        .align-left{
+            text-align: left;
+        }
+        .align-right{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    
+    <table>
+        <tr>
+            <th rowspan="2" class="width-5">Days</th>
+            <th colspan="7">Time</th>
+        </tr>
+        <tr>
+          <th class="align-right">8:00</th>
+          <th class="align-right">9:00</th>
+          <th class="align-right">10:00</th>
+          <th class="width-5 align-right">11:00</th>
+          <th class="align-right">11:30</th>
+          <th class="align-right">12:30</th>
+        </tr>
+        <tr >
+          <th class="align-left">Mon</th>
+          <td>Course 1</td>
+          <td>Course 2</td>
+          <td>Course 3</td>
+          <td rowspan="5">B<br/>r<br/>e<br/>a<br/>k</td>
+          <td>Course 5</td>
+          <td></td>
+        </tr>
+        <tr>
+          <th class="align-left">Tue</th>
+          <td colspan="2"></td>
+          <td>Course 2</td>
+          <td>Course 4</td>
+          <td>Course 1</td>
+        </tr>
+        <tr>
+          <th class="align-left">Wed</th>
+          <td>Course 3</td>
+          <td colspan="2"></td>
+          
+          <td>Course 2</td>
+        </tr>
+        <tr>
+          <th class="align-left">Thr</th>
+          <td rowspan="2">Course 4</td>
+          <td>Course 2</td>
+          <td>Course 3</td>
+          
+          <td colspan="2" rowspan="2">Thesis</td>
+        </tr>
+        <tr>
+          <th class="align-left">Fri</th>
+          
+          <td></td>
+          <td>Course 1</td>
+          
+        </tr>
+      </table>
+      
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admission form - Form4</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .head {
+        padding: 5px 10px;
+      }
+      .head > h1 {
+        font-size: 30px;
+      }
+      .head > p {
+        font-size: 20px;
+        color: rgb(58, 58, 58);
+      }
+      hr {
+        height: 2px;
+        border: 0;
+        background: #353535;
+      }
+      form {
+        padding: 5px 10px;
+      }
+      input {
+        font-size: 15px;
+        padding: 3px 5px;
+      }
+      label{
+        font-size: 20px;
+      }
+      input:focus {
+        outline: none;
+      }
+      span {
+        color: red;
+      }
+      #name input {
+        width: 4rem;
+      }
+      #name > .flex label,
+      #birth-day > .flex label
+       {
+        font-size: 10px;
+        color: rgb(58, 58, 58);
+    }
+    #gender > .flex-col label,
+    #hispanic-latino > .flex-col label{
+        font-size: 15px;
+        color: rgb(58, 58, 58);
+
+      }
+
+      .flex {
+        display: flex;
+        gap: 5px;
+      }
+      .flex-col {
+        display: flex;
+        flex-direction: column;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .gap-5 {
+        gap: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="head">
+      <h1>Admission Form</h1>
+      <p>Enter your addmission information below</p>
+    </div>
+    <hr />
+
+    <form action="">
+      <div id="name">
+        <label for="name">Name<span>*</span></label>
+        <div class="flex">
+          <div class="flex-col">
+            <input type="text" name="firstname" id="firstname" />
+            <label for="firstname">First name</label>
+          </div>
+          <div class="flex-col">
+            <input type="text" name="middleinitial" id="middleinitila" />
+            <label for="middleinitial">Middle initial</label>
+          </div>
+          <div class="flex-col">
+            <input type="text" name="lastname" id="lastname" />
+            <label for="lastname">Last name</label>
+          </div>
+        </div>
+      </div>
+      <div id="birth-day">
+        <label for="birth-date">Birth Date<span>*</span></label>
+        <div class="flex gap-5 items-center">
+          <div class="flex-col">
+            <select name="month" id="month">
+              <option value="0"></option>
+              <option value="1">Jan</option>
+              <option value="2">Feb</option>
+              <option value="3">Mar</option>
+              <option value="4">Apr</option>
+              <option value="5">May</option>
+              <option value="6">Jun</option>
+              <option value="7">Jul</option>
+              <option value="8">Aug</option>
+              <option value="9">Sept</option>
+              <option value="10">Oct</option>
+              <option value="11">Nov</option>
+              <option value="12">Dec</option>
+            </select>
+            <label for="month">month</label>
+          </div>
+          <div class="flex-col">
+            <select id="day" name="day"></select>
+            <label for="day">Day:</label>
+          </div>
+          <div class="flex-col">
+            <select name="year" id="year"></select>
+            <label for="year">Year:</label>
+          </div>
+        </div>
+      </div>
+
+      <div id="gender">
+        <label for="gender">Gender<span>*</span></label>
+        <div class="flex-col">
+          <div class="flex gap-5 items-center">
+            <input
+              type="radio"
+              name="gender"
+              id="male"
+              value="Male"
+              checked
+            /><label for="male">Male</label>
+          </div>
+          <div class="flex gap-5 items-center">
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+            /><label for="female">Female</label>
+          </div>
+          <div class="flex gap-5 items-center">
+            <input
+              type="radio"
+              name="gender"
+              id="no_answer"
+              value="Decline to Answer"
+            /><label for="no_answer">Decline to Answer</label>
+          </div>
+        </div>
+      </div>
+      <div id="hispanic-latino">
+        <label for="hispanic-latino"
+          >Are you Hispanic or Latino?<span>*</span></label
+        >
+        <div class="flex-col">
+          <div class="flex gap-5 items-center">
+            <input type="radio" name="hispanic-latino" id="yes" value="yes" />
+            <label for="yes">yes</label>
+          </div>
+          <div class="flex gap-5 items-center">
+            <input type="radio" name="hispanic-latino" id="no" value="no" />
+            <label for="yes">No</label>
+          </div>
+          <div class="flex gap-5 items-center">
+            <input
+              type="radio"
+              name="hispanic-latino"
+              id="no-answer"
+              value="Decline to Answer"
+            />
+            <label for="no-answer">Decline to Answer</label>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <script>
+      const monthSelect = document.getElementById("month");
+      const daySelect = document.getElementById("day");
+      const yearSelect = document.getElementById("year");
+
+      // to show years
+      for (let year = 1980; year <= 2040; year++) {
+        const currentyear = year;
+        const option = document.createElement("option");
+        option.value = currentyear;
+        option.text = currentyear;
+        yearSelect.appendChild(option);
+      }
+      //to show months
+      monthSelect.addEventListener("change", handleMonthChange);
+
+      function handleMonthChange() {
+        const selectedMonth = parseInt(monthSelect.value);
+        const daysInMonth = getDaysInMonth(selectedMonth);
+
+        daySelect.innerHTML = "";
+
+        for (let i = 1; i <= daysInMonth; i++) {
+          const option = document.createElement("option");
+          option.value = i;
+          option.text = i;
+          daySelect.appendChild(option);
+        }
+      }
+
+      const selectedYear = parseInt(yearSelect.value);
+      yearSelect.addEventListener(
+        "change",
+        handleMonthChange,
+        console.log(selectedYear)
+      );
+      //finding whether selected year is leap year or not
+      function isLeapYear(selectedYear) {
+        return (
+          selectedYear % 4 === 0 &&
+          (selectedYear % 100 !== 0 || selectedYear % 400 === 0)
+        );
+      }
+      //to show right number of days according to selected month
+      function getDaysInMonth(month) {
+        console.log(selectedYear);
+        switch (month) {
+          case 2:
+            return isLeapYear(selectedYear) ? 29 : 28;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            return 30;
+          default:
+            return 31;
+        }
+      }
+    </script>
+  </body>
+</html>

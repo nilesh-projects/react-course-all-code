@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grocery List</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .main {
+        padding: 20px;
+    }
+
+    .list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .list li {
+        margin: 5px 0;
+    }
+
+    .sub-list {
+        margin-left: 20px;
+    }
+</style>
+</head>
+<body>
+
+<main class="main">
+<ul class="list">
+    <li>Fruits
+        <ul class="sub-list">
+            <li>Bananas</li>
+            <li>Apples
+                <ul class="sub-list">
+                    <li>Green</li>
+                    <li>Red</li>
+                </ul>
+            </li>
+            <li>Pears</li>
+        </ul>
+    </li>
+    <li>Vegetables</li>
+    <li>Meat</li>
+</ul>
+</main>
+</body>
+</html>

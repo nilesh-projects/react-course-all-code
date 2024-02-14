@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Bird Count by Gender</title>
+    <style>
+        table,th,tr,td{
+          border: 1px solid blue;
+          border-collapse: collapse;
+          text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+<caption>Example: Nested</caption>
+    <tr>
+        <th rowspan="3" colspan="2">CI</th>
+        <th rowspan="3">All Genders</th>
+        <th colspan="2">By Gender</th>
+        
+    </tr>
+    <tr style="border: 1px solid black;">
+      <th>Males</th>
+      <th>Females</th>
+
+    </tr>
+    <tr>
+      <td>9215604</td>
+      <td>4512358</td>
+    </tr>
+    
+    <tr>
+      <th class="first-col">Rural</th>
+      <td>6,521,458</td>
+      <td>4,215,389</td>
+      <td colspan="2">4512358</td>
+    </tr>
+    
+</table>
+</body>
+</html>

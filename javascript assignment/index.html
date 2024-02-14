@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation-JS Ass1</title>
+
+    <style>
+        .flex-col{
+            display: flex;
+            flex-direction: column;
+        }
+        input{
+            width: 17rem;
+            font-size: 15px;
+            padding: 5px 10px;
+        }
+        input:focus{
+            outline: none;
+        }
+        button{
+            width: -moz-fit-content;
+            width: fit-content;
+            padding: 5px 10px;
+        }
+        span{
+            margin-left: 20px;
+        }
+        .gap-5{
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="">
+        <div class="flex-col gap-5">
+        <div>
+            <input type="text" name="username" id="username" placeholder="Enter This field"><span id="userError"></span>
+        </div>
+        <div>
+            <input type="password" name="pass" id="pass" placeholder="Enter password"><span id="passError"></span>
+        </div>
+        <div>
+            <input type="email" name="email" id="email" placeholder="Enter Email"><span id="emailError"></span>
+        </div>
+        <div>
+            <input type="text" inputmode="numeric" name="mobile-no" id="mobile-no" placeholder="Enter Mobile Number"><span id="mobileError"></span>
+        </div>
+        <button type="submit">Submit</button>
+        </div>
+    </form>
+    
+
+    <script>
+        const userInput=document.getElementById("username");
+        const passInput=document.getElementById("pass");
+        const emailInput=document.getElementById("email");
+        const mobileInput=document.getElementById("mobile-no");
+
+        const userError=document.getElementById("userError");
+        const passError=document.getElementById("passError");
+        const emailError=document.getElementById("emailError");
+        const mobileError=document.getElementById("mobileError");
+
+        userInput.addEventListener("focus",()=>{
+            const usertext=userInput.value;
+            console.log(usertext)
+            if(usertext==='') 
+            {
+                userError.textContent="User name is required";
+            }
+        })
+        userInput.addEventListener("input",()=>{
+            const usertext=userInput.value;
+            if(usertext!=='')
+            {
+                userError.innerHTML="";
+            }
+            else{
+                userError.textContent="User name is required";
+            }
+        })
+        passInput.addEventListener("focus",()=>{
+            const pass=passInput.value;
+            if(pass==='') 
+            {
+                passError.textContent="Password is required";
+            }
+        })
+        passInput.addEventListener("input",()=>{
+            const pass=passInput.value;
+            if(pass!=='')
+            {
+                passError.innerHTML="";
+            }
+            else{
+                passError.textContent="Password is required";
+            }
+        })
+        emailInput.addEventListener("focus",()=>{
+            const email=emailInput.value;
+            if(email==='') 
+            {
+                emailError.textContent="Email is required";
+            }
+        })
+        emailInput.addEventListener("input",()=>{
+            const email=emailInput.value;
+            if(email!=='')
+            {
+                emailError.innerHTML="";
+            }
+            else{
+                emailError.textContent="Email is required";
+            }
+        })
+        mobileInput.addEventListener("focus",()=>{
+            const mobile=mobileInput.value;
+            if(mobile==='') 
+            {
+                mobileError.textContent="Mobile Number is required";
+            }
+        })
+        mobileInput.addEventListener("input",()=>{
+            const mobile=mobileInput.value;
+            if(mobile!=='')
+            {
+                mobileError.innerHTML="";
+            }
+            else{
+                mobileError.textContent="Mobile Number is required";
+            }
+        })
+    </script>
+</body>
+</html>

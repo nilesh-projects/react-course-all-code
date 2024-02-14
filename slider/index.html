@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #slider{
+            display: flex;
+            height: 100px;
+            /* width: 150px; */
+            gap: 10px;
+            margin-top: 20px;
+            margin-left: 20px;
+            overflow: hidden;
+            /* border: 2px solid red; */
+        }
+        .slider>img{
+            height: 100%;
+            width: 100px;
+            border-radius: 50%;
+            /* width: 150px; */
+        }
+    </style>
+  </head>
+  <body>
+    <div id="slider">
+      <div class="slider">
+        <img src="images/img1.jpg" alt="ok" />
+      </div>
+      <div class="slider">
+        <img src="images/img2.jpg" alt="ok" />
+      </div>
+      <div class="slider">
+        <img src="images/img3.jpg" alt="ok" />
+      </div>
+      <div class="slider">
+        <img src="images/img4.jpg" alt="ok" />
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        const slider = document.getElementsByClassName("slider");
+        console.log(slider)
+        var counter=0;
+        function Slider(){
+
+            for (let index = 0; index < slider.length; index++) {
+                slider[index].style.display='none';
+                
+            }
+            // console.log("ex slider"+ counter,slider.length)
+            
+            slider[counter].style.display='block';
+            if(counter>=slider.length-1)counter=0;
+            else counter++
+            // counter = (counter + 1) % slider.length;
+            // console.log(counter)
+            setTimeout(Slider, 2000);
+            
+
+        }
+        Slider();
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From 1</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        
+        body{
+            height: 100dvh;
+            width: 100dvw;
+        }
+        .header{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .header p{
+            font-size: 15px;
+            color: rgba(83, 83, 83, );
+        }
+        hr{
+            width: 100vw;
+            height: 5px;
+            background: #000;
+            margin: auto;
+        }
+        .fullname{
+            width: 7rem;
+        }
+        .email,.phone{
+            width: 10rem;
+        }
+        input,textarea{
+            border: 0.7px solid teal;
+            border-radius: 3px;
+            padding: 2px 5px;
+            font-size: 15px;
+        }
+        input,textarea:focus{
+            outline: none;
+        }
+        span{
+            color: red;
+        }
+        .align-top{
+            
+        }
+        .items-center{
+            width: 100%;
+            text-align: center;
+        }
+        .submit{
+            background: red;
+            color: white;
+            border: 0;
+            padding: 2px 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+
+        <h1>Complaints</h1>
+        <p>Help us improve our service</p>
+    </div>
+
+    <hr />
+
+    <form action="">
+        <table>
+            <tr>
+                <td><label for="fullname">Full name<span>*</span></label></td>
+                <td><input type="text" class="fullname" id="fullname" placeholder="first" required>
+                <input type="text" class="fullname" id="fullname-2" placeholder="last"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email<span>*</span></label></td>
+                <td><input type="text" id="email" class="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="phone">Phone</label></td>
+                <td><input type="text" id="phone" class="phone"></td>
+            </tr>
+            <tr >
+                <td><lable class="align-top" for="feedback">Where did we go wrong?<span>*</span></lable></td>
+                <td><textarea name="" id="feedback" cols="30" rows="2" required placeholder="write your complaints here..."></textarea></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="items-center">
+                    <button class="submit" type="submit">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+    
+</body>
+</html>
