@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Flexbox</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      div {
+        margin: 5px 5px;
+        /* border: 2px solid red; */
+        gap: 5px;
+        flex-wrap: wrap;
+      }
+      img {
+        border: 3px solid black;
+      }
+      p {
+        max-width: 800px;
+      }
+      hr {
+        height: 3px;
+        background: gray;
+      }
+      .flex-row > img,
+      .flex-col > img {
+        height: 100px;
+        width: 100px;
+      }
+
+      .mhw-4 {
+        max-height: 400px;
+        max-width: 400px;
+      }
+      .mw-4 {
+        min-width: 400px;
+      }
+
+      .flex {
+        display: flex;
+      }
+      .flex-row {
+        flex-direction: row;
+      }
+      .flex-col {
+        flex-direction: column;
+      }
+      .items-stretch {
+        align-items: stretch;
+      }
+      .items-start {
+        align-items: start;
+      }
+      .items-end {
+        align-items: end;
+      }
+      .items-center {
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="flex">
+      <div class="flex flex-row mhw-4">
+        <img src="/images/img1.jpg" alt="img1" />
+        <img src="/images/img2.jpg" alt="img2" />
+        <img src="/images/img3.jpg" alt="img3" />
+        <img src="/images/img4.jpg" alt="img4" />
+        <img src="/images/img5.jpg" alt="img5" />
+        <img src="/images/img6.jpg" alt="img6" />
+        <img src="/images/img7.jpg" alt="img7" />
+        <img src="/images/img8.jpg" alt="img8" />
+        <img src="/images/img9.jpg" alt="img9" />
+      </div>
+      <div class="flex-row-info">
+        <h1>Flex-direction row</h1>
+        <p>
+          Uses flex-direction: row to make the photos run in rows. This is the
+          initial setting-if you don't set the flex-direction property it will
+          use row anyway
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="flex">
+      <div class="flex flex-col mhw-4 mw-4">
+        <img src="/images/img1.jpg" alt="img1" />
+        <img src="/images/img2.jpg" alt="img2" />
+        <img src="/images/img3.jpg" alt="img3" />
+        <img src="/images/img4.jpg" alt="img4" />
+        <img src="/images/img5.jpg" alt="img5" />
+        <img src="/images/img6.jpg" alt="img6" />
+        <img src="/images/img7.jpg" alt="img7" />
+        <img src="/images/img8.jpg" alt="img8" />
+        <img src="/images/img9.jpg" alt="img9" />
+      </div>
+      <div class="flex-row-info">
+        <h1>Flex-direction column</h1>
+        <p>
+          Uses flex-direction: column to make the photos run in columns instead
+          of (the default) rows. This example uses an explicitly set height on
+          the flex container to Determine when the photos wrap over to the next
+          column
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="flex">
+      <div class="flex items-stretch mhw-4">
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+      </div>
+      <div class="items-stretch-info">
+        <h1>Align Item Strtch</h1>
+        <p>
+          Uses align-items : stretch which stretches any shorter images to the
+          height of the tallest image. This is the initial value of the
+          align-items property, so if you don't set this property, it will use
+          stretch anyway.
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="flex">
+      <div class="flex items-start mhw-4">
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+      </div>
+      <div class="items-start-info">
+        <h1>Align items flex-start</h1>
+        <p>
+          Uses align-items : flex-start which sets each photo to the top of the
+          row. The height of each photo shrinks so that it fits the content.
+          This results in varying sized photos (unless they all have content of
+          the same height).
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="flex">
+      <div class="flex items-end mhw-4">
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+      </div>
+      <div class="items-end-info">
+        <h1>Align items flex-end</h1>
+        <p>
+          Uses align-items : flex-end which sets each photo to the bottom of the
+          row. The height of each photo shrinks so that it fits the content.
+          This results in varying sized photos (unless they all have content of
+          the seme height.)
+        </p>
+      </div>
+    </div>
+    <hr />
+    <div class="flex">
+      <div class="flex items-center mhw-4">
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img11-small.jpg" alt="img11-small" />
+        <img src="/images/img12-small2.jpg" alt="img12-small2" />
+        <img src="/images/img10-small.jpg" alt="img10-small" />
+      </div>
+      <div class="items-center-info">
+        <h1>Align items center</h1>
+        <p>
+          Uses align-items : center which sets each photo to the center of the
+          row. The height of each photo shrinks so that it fits the content.
+          This results in varying sized photos (unless they all have content of
+          the same height.)
+        </p>
+      </div>
+    </div>
+    <hr />
+  </body>
+</html>

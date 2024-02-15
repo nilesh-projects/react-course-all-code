@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy-grail-layout 1</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100dvh;
+            width: 100dvw;
+        }
+        .header,.article,.aside,.nav,.footer{
+            padding: 20px 30px;
+        }
+        .header,.footer{
+            height: 100px;
+            width: 100dvw;
+            background-color: rgb(120, 240, 55);
+        }
+        .main{
+            height: calc(100% - 200px);
+            width: 100%;
+            display: flex;
+        }
+        .article{
+            width: calc(100% - 400px);
+            height: 100%;
+        }
+        .aside{
+            background-color: rgb(221, 202, 165);
+            width: 200px;
+            height: 100%;
+        }
+        .nav{
+            background-color: rgb(244, 225, 190);
+            width: 200px;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    
+    <header class="header">Header</header>
+    <div class="main">
+        <nav class="nav">Nav</nav>
+        <article class="article">Article</article>
+        <aside class="aside">Aside</aside>
+    </div>
+    <footer class="footer">Footer</footer>
+</body>
+</html>

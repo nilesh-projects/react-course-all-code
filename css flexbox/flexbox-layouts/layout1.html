@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout 1- Flexbox</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100dvh;
+            width: 100dvw;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header,.footer{
+            background-color: rgb(120, 240, 55);
+            height: 100px;
+            width: 100%;
+            padding: 20px 30px;
+        }
+        
+        .main{
+            height: calc(100% - 200px);
+            width: 100%;
+            display: flex;
+        }
+        .article{
+            background: white;
+            height: 100%;
+            width: calc(100% - 400px);
+            padding: 20px 30px;
+        }
+        .aside{
+            background-color: rgb(227, 200, 149);
+            height: 100%;
+            width: 200px;
+            padding: 20px 30px;
+            
+        }
+        .nav{
+            background: rgb(160, 213, 233);
+            height: 100%;
+            width: 200px;
+            padding: 20px 30px;
+        }
+        
+    </style>
+</head>
+<body>
+    <header class="header">Header</header>
+    <div class="main">
+        <article class="article">Article</article>
+        <aside class="aside">Aside</aside>
+        <nav class="nav">Nav</nav>
+    </div>
+    <footer class="footer">Footer</footer>
+</body>
+</html>
