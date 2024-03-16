@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Validation</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .passContainer {
+      margin: 1rem;
+      display: flex;
+    }
+    .error {
+      color: red;
+    }
+    .valid {
+      color: green;
+    }
+    #password {
+      height: 1rem;
+      width: 10rem;
+      margin: 0 1rem;
+    }
+    #passError {
+      display: none;
+      /* border: 2px solid red; */
+      padding: 0 1rem;
+    }
+  </style>
+  <body>
+    <div class="passContainer">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        required
+      />
+      <!-- onblur="checkValid(this,document.getElementById('passError'))" -->
+      <div id="passError">
+        <ul>
+          <li id="lower" class="error">a lowercase character</li>
+          <li id="capital" class="error">an uppercase character</li>
+          <li id="number" class="error">atleast one number</li>
+          <li id="minChar" class="error">minimum 8 character</li>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const password = document.getElementById("password");
+      const passError = document.getElementById("passError");
+      const lower = document.getElementById("lower");
+      const capital = document.getElementById("capital");
+      const number = document.getElementById("number");
+      const minChar = document.getElementById("minChar");
+
+      password.addEventListener("focus", () => {
+        passError.style.display = "block";
+      });
+      password.addEventListener("blur", () => {
+        passError.style.display = "none";
+      });
+
+      password.addEventListener("input", (e) => {
+        let pass = e.target.value;
+        let lowerCase = /[a-z]/g;
+        let upperCase = /[A-Z]/g;
+        let numbers = /[0-9]/g;
+        let min = 8;
+        if (pass.match(lowerCase)) {
+          lower.classList.remove("error");
+          lower.classList.add("valid");
+          console.log("a lowercase character");
+        } else {
+          lower.classList.remove("valid");
+          lower.classList.add("error");
+        }
+        if (pass.match(upperCase)) {
+          capital.classList.remove("error");
+          capital.classList.add("valid");
+          console.log("an uppercase character");
+        } else {
+          capital.classList.remove("valid");
+          capital.classList.add("error");
+        }
+        if (pass.match(numbers)) {
+          number.classList.remove("error");
+          number.classList.add("valid");
+          console.log("atleast one number");
+        } else {
+          number.classList.remove("valid");
+          number.classList.add("error");
+        }
+        if (pass.length >= min) {
+          minChar.classList.remove("error");
+          minChar.classList.add("valid");
+          console.log("minimum 8 character");
+        } else {
+          minChar.classList.remove("valid");
+          minChar.classList.add("error");
+        }
+      });
+    </script>
+  </body>
+</html>

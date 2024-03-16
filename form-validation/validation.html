@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Validation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      input {
+        border-radius: 10px;
+        margin: 0.5rem 0;
+        padding: 0.5rem 1rem;
+      }
+      label {
+        margin: 0.5rem 1rem;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+      }
+      input:focus {
+        outline: none;
+      }
+      .error {
+        color: red;
+      }
+      .success {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <table>
+        <tr>
+          <td>
+            <label for="username">Username</label>
+          </td>
+          <td>
+            <!-- onblur="checkValid(this)" in this function the argument/parameter is the element which is being focused i.e. the input field itself. -->
+            <input
+              onblur="checkValid(this,'userError')"
+              type="text"
+              name="username"
+              id="username"
+              required
+            />
+            <span id="userError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="password">Password</label>
+          </td>
+          <td>
+            <input
+              type="password"
+              name="password"
+              id="password"
+              onblur="checkValid(this,'passError')"
+              required
+            />
+            <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" -->
+            <span id="passError"></span>
+            <!-- <div id="passError">
+              <ul>
+                <li class="error">a lowercase character</li>
+                <li class="error">an uppercase character</li>
+                <li class="error">atleast one number</li>
+                <li class="error">minimum 8 character</li>
+              </ul>
+            </div> -->
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="email">Email</label>
+          </td>
+          <td>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              onblur="checkValid(this,'emailError')"
+              required
+            />
+            <span id="emailError"></span>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="gender">Gender</label>
+          </td>
+          <td>
+            <input
+              type="radio"
+              name="gender"
+              id="male"
+              value="male"
+              checked
+            /><label for="male">Male</label>
+            <input
+              type="radio"
+              name="gender"
+              id="female"
+              value="female"
+            /><label for="female">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Save" /></td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      const checkValid = (element, errorMsg) => {
+        // const username = document.getElementById("username");
+        // const userText = username.value;
+        // const userError = document.getElementById("userError");
+        // console.log(element, errorMsg, element.value);
+        if (element.value == "") {
+          document.getElementById(errorMsg).innerHTML =
+            "This field is required";
+          console.log("working");
+        } else {
+          document.getElementById(errorMsg).innerHTML = "";
+        }
+      };
+    </script>
+  </body>
+</html>
